@@ -13,14 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4.4.0
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4.11.0
         with:
-          node-version: "24"
-      - run: npm ci
+          node-version: "24.x"
+      - name: Install dependencies
+        run: npm ci
       - run: npm run build
       - run: npm run export
-      - uses: peaceiris/actions-gh-pages@v4
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4.4.0
         with:
           publish_dir: ./out
           publish_branch: gh-pages
