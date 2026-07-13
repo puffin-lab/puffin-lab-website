@@ -8,15 +8,14 @@ export const metadata = {
 
 export default function PeoplePage() {
   return (
-    <div className="py-10 md:py-12">
+    <div className="py-10 md:py-22">
       <div className="mx-auto max-w-6xl px-6">
         <header className="mb-10">
           <h1 className="text-2xl font-bold text-puffin-navy md:text-3xl">
             People
           </h1>
-          <p className="mt-2 max-w-xl text-sm text-puffin-gray">
-            Meet the researchers behind Puffin Lab. Hover over a photo to see
-            pets and favorite things.
+          <p className="mt-2 max-w-xl text-mm text-puffin-gray">
+            Meet the researchers behind Puffin Lab!
           </p>
         </header>
 
@@ -30,7 +29,7 @@ export default function PeoplePage() {
 
         {/* Collaborators — compact list */}
         <section className="mb-10">
-          <h2 className="mb-5 border-b border-puffin-blue/15 pb-2 text-base font-semibold text-puffin-navy">
+          <h2 className="mb-5 border-b border-puffin-blue/15 pb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
             Collaborators & Affiliates
           </h2>
           <ul className="space-y-3">
