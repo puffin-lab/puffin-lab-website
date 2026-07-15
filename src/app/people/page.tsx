@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PeopleSectionGrid } from "@/components/person-tile";
-import { peopleSections, collaborators } from "@/lib/data";
+// import { peopleSections, collaborators } from "@/lib/data";
+import { peopleSections} from "@/lib/data";
 
 export const metadata = {
   title: "People",

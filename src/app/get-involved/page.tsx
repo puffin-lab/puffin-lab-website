@@ -1,8 +1,8 @@
-import Link from "next/link";
+// import Link from "next/link";
 import {
   PageHero,
   SectionHeading,
-  StatusBadge,
+  // StatusBadge,
 } from "@/components/layout";
 import { siteConfig, opportunities } from "@/lib/data";
 
@@ -11,11 +11,11 @@ export const metadata = {
 };
 
 export default function GetInvolvedPage() {
-  const showResearchParticipants = opportunities.summary.some(
-    (o) =>
-      o.type === "Research studies" &&
-      o.status.toLowerCase() !== "no active recruitment"
-  );
+  // const showResearchParticipants = opportunities.summary.some(
+  //   (o) =>
+  //     o.type === "Research studies" &&
+  //     o.status.toLowerCase() !== "no active recruitment"
+  // );
 
   return (
     <>
@@ -30,8 +30,8 @@ export default function GetInvolvedPage() {
           <SectionHeading title="Get Involved" />
           <div className="rounded-xl border border-puffin-blue/10 bg-white p-8 shadow-sm text-puffin-gray">
             <p className="mb-4">
-              We are currently migrating the detailed "Get Involved" content from
-              Zihan's personal website to this site. If you are interested in joining Puffin Lab, please refer to Zihan Wu's webpage for up-to-date information and
+              We are currently migrating the detailed &quot;Get Involved&quot; content from
+              Zihan&apos;s personal website to this site. If you are interested in joining Puffin Lab, please refer to Zihan&apos;s webpage for up-to-date information and
               application details.
             </p>
             <a
@@ -40,7 +40,7 @@ export default function GetInvolvedPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-lg bg-puffin-navy px-5 py-2 text-sm font-medium text-white hover:bg-puffin-blue transition-colors"
             >
-              Visit Zihan's webpage →
+              Visit Zihan&apos;s webpage →
             </a>
           </div>
         </div>
