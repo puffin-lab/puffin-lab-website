@@ -84,12 +84,13 @@ export function PersonTile({ person }: { person: Person }) {
         )}
       </h3>
 
-      <p className="mt-0.5 line-clamp-1 text-sm leading-tight text-puffin-gray">{person.role}, {person.affiliation}</p>
-
-
-      <span className="mt-0.5 inline-block rounded-full bg-puffin-orange/10 px-2 py-0.5 text-[12px] font-medium leading-tight text-puffin-orange">
-        {person.interestTag}
-      </span>
+      <p className="mt-0.5 line-clamp-1 text-sm leading-tight text-puffin-gray">{person.role}</p>
+      <p className="mt-0.5 line-clamp-1 text-sm leading-tight text-puffin-gray">{person.affiliation}</p>
+      {person.interestTag && (
+        <span className="mt-0.5 inline-block rounded-full bg-puffin-orange/10 px-2 py-0.5 text-[12px] font-medium leading-tight text-puffin-orange">
+          {person.interestTag}
+        </span>
+      )}
 
     </article>
   );
@@ -109,7 +110,7 @@ export function PeopleSectionGrid({
       <h2 className="mb-4 border-b border-puffin-blue/15 pb-2 text-sm font-semibold uppercase tracking-wide text-puffin-navy">
         {title}
       </h2>
-      <div className="grid grid-cols-3 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div className="grid grid-cols-3 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
         {people.map((person) => (
           <PersonTile key={person.id} person={person} />
         ))}

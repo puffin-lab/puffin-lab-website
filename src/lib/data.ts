@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Puffin Lab",
   tagline:
-    "Designing engaging, scalable educational tools at the intersection of HCI and computing education.",
+    "Participation, Understanding, Feedback, and Interaction for Novices",
   university: "University of Maine",
   department: "School of Computing and Information Science",
   location: "Orono, Maine",
@@ -46,7 +46,7 @@ export type Person = {
   role: string;
   affiliation?: string;
   photo?: string;
-  interestTag: string;
+  interestTag?: string;
   hoverItems?: HoverItem[];
   website?: string;
   bio?: string;
@@ -71,57 +71,15 @@ export type Collaborator = {
 
 export const projects: Project[] = [
   {
-    id: "codetailor",
-    title: "CodeTailor",
+    id: "characater-programming-tool",
+    title: "AI helpers with Personalities",
     description:
-      "LLM-powered personalized Parsons puzzles that adapt to each learner's needs, providing engaging support while learning programming.",
+      "Understanding how 'personal' characteristics of AI assistants affect student learning.",
     theme: "AI-Supported Learning",
     status: "Active",
-    team: ["Xinying Hou", "Zihan Wu", "Xu Wang", "Barbara J. Ericson"],
-    years: "2023 – Present",
-    tags: ["Parsons Problems", "LLMs", "Personalization"],
-    collaborators: "University of Michigan",
-    publication: "L@S '24 — Best Paper Nomination",
-    links: [{ label: "Paper PDF", href: "#" }],
-  },
-  {
-    id: "sql-puzzles",
-    title: "SQL Puzzles",
-    description:
-      "Evaluating micro Parsons problems with different feedback types as practice for novices learning database querying.",
-    theme: "Feedback & Assessment",
-    status: "Active",
-    team: ["Zihan Wu", "Barbara J. Ericson"],
-    years: "2022 – Present",
-    tags: ["SQL", "Parsons Problems", "Feedback"],
-    publication: "CHI '24",
-    links: [{ label: "Paper PDF", href: "#" }],
-  },
-  {
-    id: "ai-programming-tools",
-    title: "AI-Supported Programming Learning Tools",
-    description:
-      "Understanding learner and instructor needs in AI-supported programming environments to inform design of adaptive features and control mechanisms.",
-    theme: "AI in Computing Education",
-    status: "Active",
-    team: ["Zihan Wu", "Yicheng Tang", "Barbara J. Ericson"],
-    years: "2024 – Present",
-    tags: ["AI", "Programming Education", "Adaptive Control"],
-    publication: "AIED 2025",
-    links: [{ label: "Paper PDF", href: "#" }],
-  },
-  {
-    id: "regex-scaffolding",
-    title: "Regular Expression Scaffolding",
-    description:
-      "Using micro Parsons problems to scaffold the learning of regular expressions for novice programmers.",
-    theme: "Scaffolding & Practice",
-    status: "Completed",
-    team: ["Zihan Wu", "Barbara J. Ericson", "Christopher Brooks"],
-    years: "2021 – 2023",
-    tags: ["Regular Expressions", "Parsons Problems"],
-    publication: "ITiCSE '23",
-    links: [{ label: "Paper PDF", href: "#" }],
+    team: ["Natalie Olsen", "Zihan Wu"],
+    years: "2026 – Present",
+    tags: ["LLMs", "Personalization"]
   },
 ];
 
@@ -156,6 +114,7 @@ export const director: Person = {
   name: "Zihan Wu",
   role: "Assistant Professor & Lab Director",
   affiliation: "UMaine SCIS",
+  photo: "/images/zihan_profile.jpg",
   interestTag: "HCI × Computing Education",
   website: "https://www.zihanwu.com",
   hoverItems: [
@@ -170,51 +129,22 @@ export const director: Person = {
 
 export const peopleSections: PeopleSection[] = [
   {
-    title: "Lab Director",
+    title: "Faculty",
     people: [director],
   },
   {
-    title: "PhD Students",
+    title: "Graduate Students",
     people: [
       {
-        id: "phd-placeholder-1",
-        name: "Alex Chen",
+        id: "example-phd-1",
+        name: "Firstname Lastname",
         role: "PhD Student",
-        affiliation: "HCTD Program",
+        affiliation: "Computer Science, SCIS",
         interestTag: "Adaptive Feedback",
         hoverItems: [
           { emoji: "🐱", label: "Cat parent" },
           { emoji: "🎮", label: "Indie games" },
           { emoji: "🧋", label: "Bubble tea" },
-        ],
-      },
-      {
-        id: "phd-placeholder-2",
-        name: "Jordan Lee",
-        role: "PhD Student",
-        affiliation: "HCTD Program",
-        interestTag: "AI in Education",
-        website: "#",
-        hoverItems: [
-          { emoji: "🐕", label: "Dog lover" },
-          { emoji: "🏔️", label: "Hiking" },
-          { emoji: "🎸", label: "Guitar" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Master's Students",
-    people: [
-      {
-        id: "ms-placeholder-1",
-        name: "Sam Rivera",
-        role: "MS Student",
-        affiliation: "Computer Science",
-        interestTag: "UX for Learning",
-        hoverItems: [
-          { emoji: "🌱", label: "Plants" },
-          { emoji: "🎨", label: "Watercolor" },
         ],
       },
     ],
@@ -223,45 +153,20 @@ export const peopleSections: PeopleSection[] = [
     title: "Undergraduate Researchers",
     people: [
       {
-        id: "ug-placeholder-1",
-        name: "Taylor Kim",
-        role: "Undergraduate Researcher",
-        affiliation: "Computer Science",
-        interestTag: "Database Education",
+        id: "example-ug-1",
+        name: "Firstname Lastname",
+        role: "Undergraduate Student",
+        affiliation: "Computer Science, SCIS",
+        interestTag: "Adaptive Feedback",
         hoverItems: [
-          { emoji: "🐰", label: "Pet bunny" },
-          { emoji: "⚽", label: "Soccer" },
-          { emoji: "🍜", label: "Ramen" },
+          { emoji: "🐱", label: "Cat parent" },
+          { emoji: "🎮", label: "Indie games" },
+          { emoji: "🧋", label: "Bubble tea" },
         ],
-      },
-      {
-        id: "ug-placeholder-2",
-        name: "Morgan Patel",
-        role: "Undergraduate Researcher",
-        affiliation: "HCTD",
-        interestTag: "Educational Tools",
-        hoverItems: [
-          { emoji: "🦜", label: "Parrot" },
-          { emoji: "📷", label: "Photography" },
-        ],
-      },
-      {
-        id: "ug-placeholder-3",
-        name: "Casey Nguyen",
-        role: "Undergraduate Researcher",
-        affiliation: "Computer Science",
-        interestTag: "Programming Feedback",
       },
     ],
   },
 ];
-
-/** @deprecated Use peopleSections instead */
-export const members: Record<string, Person[]> = Object.fromEntries(
-  peopleSections
-    .filter((s) => s.title !== "Lab Director")
-    .map((s) => [s.title, s.people])
-);
 
 export const collaborators: Collaborator[] = [
   {
@@ -314,11 +219,9 @@ export const researchOverview = {
 
 export const aboutLab = {
   what:
-    "Puffin Lab (participation, understanding, feedback, and interaction for novices) studies how to design engaging, scalable educational tools for computing, especially for novice learners.",
+    "We study how to design engaging, scalable educational tools for learners and for the educational community in the AI era, especially in the discipline of computing.",
   why:
-    "Computing education faces a dual challenge: keeping learners engaged while ensuring they develop deep understanding. Our work addresses this by designing tools grounded in learning science and validated through rigorous evaluation.",
+    "No matter how AI has changed the content and landscape of learning, it is still a crucial questions to engage people to learn and make sure they are still motivated to do the things they want to do, and AI does not become another barrier that stops them.",
   approach:
-    "We combine qualitative lab studies with large-scale classroom and field studies. We draw on learning theories from computing education and human-centered design methods from HCI.",
-  communities:
-    "We work with K-12 and university educators, novice programmers, instructors teaching introductory computing courses, and community partners interested in equitable access to computing education.",
+    "Like many researchers in the field of human-computer interaction (HCI) and computing education research (CER), we are either (a) trying to advance our knowledge of human in learning, or (b) creating new tools to advance our way to learn. We conduct lab studies, classroom studies and large-scale field studies. We draw on learning theories from computing education and human-centered design methods from HCI.",
 };

@@ -33,9 +33,9 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section - 2 Columns */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:items-center">
             {/* Left Column */}
             <div className="flex flex-col justify-center">
               <div className="mb-6 flex items-center gap-3">
@@ -81,7 +81,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-puffin-navy mb-2">
-                  Approach
+                  How
                 </h2>
                 <p>{aboutLab.approach}</p>
               </div>
@@ -91,7 +91,7 @@ export default function HomePage() {
       </section>
 
       {/* Research Themes Section - 3 Columns */}
-      <section className="py-12 md:py-16 bg-puffin-cream/50">
+      {/* <section className="py-6 md:py-6 bg-puffin-cream/50">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
             Research Themes
@@ -109,17 +109,16 @@ export default function HomePage() {
                   {theme}
                 </h3>
                 <p className="mt-2 text-sm text-puffin-gray">
-                  {/* Theme description placeholder */}
                   Research and development in this area.
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Projects Section */}
-      <section className="py-12 md:py-16">
+      <section className="py-6 md:py-6">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
             Featured Projects
@@ -152,14 +151,11 @@ export default function HomePage() {
       </section>
 
       {/* News Section - 1 Column */}
-      <section className="py-12 md:py-16 bg-puffin-cream/50">
+      <section className="py-6 md:py-6 bg-puffin-cream/50">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
-            Recent Updates
+            News
           </h2>
-          <p className="mb-8 text-puffin-gray">
-            Latest news and updates from the lab.
-          </p>
           <ul className="space-y-2 text-sm">
             {[...researchNews, ...socialNews].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((item) => (
               <li
@@ -182,73 +178,6 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* News Section - 2 Columns */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
-            Recent Updates
-          </h2>
-          <p className="mb-8 text-puffin-gray">
-            Latest news and updates from the lab.
-          </p>
-          <div className="grid gap-8 md:grid-cols-2">
-            {/* Research Events */}
-            <div>
-              <h3 className="mb-4 text-sm font-semibold text-puffin-navy">Research</h3>
-              <ul className="space-y-2 text-sm">
-                {researchNews.map((item) => (
-                  <li
-                    key={item.id}
-                    className="flex flex-col gap-1"
-                  >
-                    <div className="items-baseline gap-3">
-                      <time
-                        dateTime={item.date}
-                        className="whitespace-nowrap font-bold text-puffin-orange text-sm pr-2"
-                      >
-                        {new Date(item.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}:
-                      </time>
-                      <span className="text-puffin-navy font-medium">{item.content}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Social Events */}
-            <div>
-              <h3 className="mb-4 text-sm font-semibold text-puffin-navy">Social</h3>
-              <ul className="space-y-2 text-sm">
-                {socialNews.map((item) => (
-                  <li
-                    key={item.id}
-                    className="flex flex-col gap-1"
-                  >
-                    <div className="items-baseline gap-3">
-                      <time
-                        dateTime={item.date}
-                        className="whitespace-nowrap font-bold text-puffin-orange text-sm pr-2"
-                      >
-                        {new Date(item.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}:
-                      </time>
-                      <span className="text-puffin-navy font-medium">{item.content}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
     </>

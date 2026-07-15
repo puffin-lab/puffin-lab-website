@@ -28,7 +28,7 @@ export default function PeoplePage() {
         ))}
 
         {/* Collaborators — compact list */}
-        <section className="mb-10">
+        {/* <section className="mb-10">
           <h2 className="mb-5 border-b border-puffin-blue/15 pb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
             Collaborators & Affiliates
           </h2>
@@ -61,7 +61,7 @@ export default function PeoplePage() {
               </li>
             ))}
           </ul>
-        </section>
+        </section> */}
 
         {/* Join CTA */}
         <section className="rounded-lg border border-puffin-blue/10 bg-white px-6 py-8 text-center">
