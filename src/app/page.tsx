@@ -3,7 +3,7 @@ import {
   siteConfig,
   projects,
   aboutLab,
-  researchOverview,
+  // researchOverview,
 } from "@/lib/data";
 
 export default function HomePage() {
@@ -121,10 +121,16 @@ export default function HomePage() {
       <section className="py-6 md:py-6">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-2 text-base font-semibold uppercase tracking-wide text-puffin-navy">
-            Featured Projects
+            Projects
+                <Link
+                  href="/research"
+                  className="mt-4 text-sm font-medium text-puffin-sky hover:underline pl-3"
+                >
+                  Learn more →
+                </Link>
           </h2>
           <p className="mb-8 text-puffin-gray">
-            Current research projects at the intersection of HCI and computing education.
+            Current research projects going on (under construction - we are still filling in the cool things we do!)
           </p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {featuredProjects.map((project) => (
@@ -135,15 +141,9 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-puffin-navy">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-puffin-gray flex-grow">
+                <p className="mt-2 text-sm text-puffin-gray grow">
                   {project.description}
                 </p>
-                <Link
-                  href="/research"
-                  className="mt-4 text-sm font-medium text-puffin-sky hover:underline"
-                >
-                  Learn more →
-                </Link>
               </div>
             ))}
           </div>

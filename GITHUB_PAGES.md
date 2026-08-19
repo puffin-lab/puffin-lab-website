@@ -8,8 +8,6 @@ This repository is configured to deploy the static Next.js site to GitHub Pages 
   - Set `output: "export"` so the site can be exported as static HTML.
 - `package.json`
   - Added `export` and `deploy` scripts:
-    - `npm run build`
-    - `npm run export`
     - `npm run deploy`
 - `.github/workflows/deploy.yml`
   - Builds the site and deploys `out/` to the `gh-pages` branch.

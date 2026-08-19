@@ -21,7 +21,7 @@ function PhotoPlaceholder({ name }: { name: string }) {
     .toUpperCase();
 
   return (
-    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-puffin-blue/30 to-puffin-sky/40 text-lg font-semibold text-puffin-navy">
+    <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-puffin-blue/30 to-puffin-sky/40 text-lg font-semibold text-puffin-navy">
       {initials}
     </div>
   );
@@ -34,11 +34,10 @@ export function PersonTile({ person }: { person: Person }) {
 
   return (
     <article
-      className="group flex flex-col items-center text-center outline-none"
-      tabIndex={person.hoverItems?.length ? 0 : undefined}
+      className="flex flex-col items-center text-center outline-none"
     >
-      <div className="relative aspect-square w-full max-w-[128px]">
-        <div className="h-full w-full overflow-hidden rounded-lg ring-2 ring-puffin-blue/10 ring-offset-1 ring-offset-puffin-cream transition-shadow group-hover:ring-puffin-sky/40">
+      <div className="group relative aspect-square w-full max-w-32">
+        <div className="h-full w-full overflow-hidden rounded-lg ring-2 ring-puffin-blue/10 ring-offset-1 ring-offset-puffin-cream transition-shadow group-hover:ring-puffin-sky/10">
           {person.photo ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -53,13 +52,13 @@ export function PersonTile({ person }: { person: Person }) {
 
         {person.hoverItems && person.hoverItems.length > 0 && (
           <div
-            className="pointer-events-none absolute inset-0 rounded-lg bg-puffin-navy/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100"
+            className="pointer-events-none absolute inset-0 rounded-lg bg-puffin-navy/50 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
             aria-hidden="true"
           >
             {person.hoverItems.map((item, i) => (
               <span
                 key={`${item.emoji}-${i}`}
-                className={`absolute text-lg drop-shadow-sm transition-transform duration-200 group-hover:scale-110 ${HOVER_POSITIONS[i % HOVER_POSITIONS.length]}`}
+                className={`absolute text-2xl drop-shadow-sm transition-transform duration-200 group-hover:scale-110 ${HOVER_POSITIONS[i % HOVER_POSITIONS.length]}`}
                 title={item.label}
               >
                 {item.emoji}
@@ -77,7 +76,7 @@ export function PersonTile({ person }: { person: Person }) {
             rel="noopener noreferrer"
             className="hover:text-puffin-sky hover:underline"
           >
-            {person.name}
+            {person.name} ↗
           </a>
         ) : (
           person.name
@@ -86,6 +85,18 @@ export function PersonTile({ person }: { person: Person }) {
 
       <p className="mt-0.5 line-clamp-1 text-sm leading-tight text-puffin-gray">{person.role}</p>
       <p className="mt-0.5 line-clamp-1 text-sm leading-tight text-puffin-gray">{person.affiliation}</p>
+      {person.interests && person.interests.length > 0 && (
+        <div className="mt-1 flex flex-wrap justify-center gap-1">
+          {person.interests.map((interest) => (
+            <span
+              key={interest}
+              className="inline-block rounded-full bg-puffin-orange/10 px-2 py-0.5 text-[12px] font-medium leading-tight text-puffin-orange"
+            >
+              {interest}
+            </span>
+          ))}
+        </div>
+      )}
       {person.interestTag && (
         <span className="mt-0.5 inline-block rounded-full bg-puffin-orange/10 px-2 py-0.5 text-[12px] font-medium leading-tight text-puffin-orange">
           {person.interestTag}
