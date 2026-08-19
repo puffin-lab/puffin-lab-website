@@ -14,3 +14,12 @@ body {
   background-color: var(--color-puffin-cream);
   color: #1a1a1a;
 }
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}

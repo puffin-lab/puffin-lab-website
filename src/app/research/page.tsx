@@ -61,13 +61,39 @@ export default function ResearchPage() {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
             title="Current Projects"
-            subtitle="Active and recently completed research projects."
           />
+          <div
+            className="relative mb-8 overflow-hidden rounded-xl border border-puffin-orange/30 bg-puffin-orange/5 px-5 py-4"
+            role="status"
+            aria-live="polite"
+          >
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 w-1/3 -translate-x-full bg-linear-to-r from-transparent via-puffin-orange/15 to-transparent animate-[shimmer_3s_ease-in-out_infinite]"
+              aria-hidden="true"
+            />
+            <div className="relative flex items-center gap-3">
+              <span className="text-2xl" aria-hidden="true">
+                🚧
+              </span>
+              <div>
+                <p className="font-semibold text-puffin-navy">
+                  Projects under construction
+                </p>
+                <p className="mt-0.5 text-sm text-puffin-gray">
+                  We are actively updating this section. Check back soon for updates or talk to us for more details!
+                </p>
+              </div>
+              <span
+                className="ml-auto h-2.5 w-2.5 shrink-0 rounded-full bg-puffin-orange animate-pulse"
+                aria-label="Updating"
+              />
+            </div>
+          </div>
           <div className="grid gap-6 md:grid-cols-2">
             {activeProjects.map((project) => (
               <div key={project.id} className="space-y-4">
                 {/* Placeholder image area */}
-                <div className="aspect-video rounded-xl bg-gradient-to-br from-puffin-blue/20 to-puffin-sky/20 flex items-center justify-center border border-puffin-blue/10">
+                <div className="aspect-video rounded-xl bg-linear-to-br from-puffin-blue/20 to-puffin-sky/20 flex items-center justify-center border border-puffin-blue/10">
                   <span className="text-puffin-gray text-sm">
                     Project image placeholder
                   </span>
