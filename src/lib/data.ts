@@ -208,6 +208,20 @@ export const peopleSections: PeopleSection[] = [
           { emoji: "🎨", label: "" },
         ],
       },
+      {
+        id: "dylan-sherwood",
+        name: "Dylan Sherwood",
+        role: "Undergraduate Student",
+        affiliation: "Maine College of Engineering and Computing",
+        photo: "/images/dylan_profile.png",
+        interests: ["Systems", "Computer Science", "LLM", "HCI", "Philosophy"],
+        hoverItems: [
+          { emoji: "😎", label: "" },
+          { emoji: "☯️", label: "" },
+          { emoji: "🎮", label: "" },
+          { emoji: "💻", label: "" },
+        ],
+      },
     ],
   },
 ];
