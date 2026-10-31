@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PageHero, SectionHeading } from "@/components/layout";
 import { news, type NewsItem } from "@/lib/data";
-import { blogPosts, formatDate } from "@/lib/newsPosts";
+import { NewsPosts, formatDate } from "@/lib/newsPosts";
 import { PostsViewer } from "@/components/posts-viewer";
 
 export const metadata = {
@@ -50,7 +50,7 @@ function NewsCard({ item }: { item: NewsItem }) {
 }
 
 export default function NewsPage() {
-  const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
+  const sortedPosts = [...NewsPosts].sort((a, b) => b.date.localeCompare(a.date));
   const latestNews = [...news]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, LATEST_UPDATES_COUNT);
@@ -70,7 +70,7 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Latest Updates */}
+      {/* Previous Updates */}
       <section className="py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="Previous Updates" />

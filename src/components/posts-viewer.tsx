@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { formatDate, type BlogPost } from "@/lib/newsPosts";
+import { formatDate, type NewsPost } from "@/lib/newsPosts";
 
-export function PostsViewer({ posts }: { posts: BlogPost[] }) {
+export function PostsViewer({ posts }: { posts: NewsPost[] }) {
   const [selectedId, setSelectedId] = useState(posts[0]?.id);
 
   // Open the post named in the URL, e.g. /news#example-post, so a post can be shared by link

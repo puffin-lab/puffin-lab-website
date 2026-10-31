@@ -1,4 +1,4 @@
-export type BlogPost = {
+export type NewsPost = {
   id: string; // unique, any short name
   title: string;
   date: string; // "YYYY-MM-DD"
@@ -7,7 +7,7 @@ export type BlogPost = {
   content: string[]; // one string per paragraph
 };
 
-export const blogPosts: BlogPost[] = [
+export const NewsPosts: NewsPost[] = [
   {
     id: "example-1-post",
     title: "Example post: what we're working on",
