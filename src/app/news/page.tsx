@@ -1,21 +1,14 @@
 import Link from "next/link";
 import { PageHero, SectionHeading } from "@/components/layout";
 import { news, type NewsItem } from "@/lib/data";
+import { blogPosts, formatDate } from "@/lib/newsPosts";
+import { PostsViewer } from "@/components/posts-viewer";
 
 export const metadata = {
   title: "News",
 };
 
-// Dates are stored as "YYYY-MM-DD". Format in UTC so they don't show
-// a day early for visitors in US time zones.
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-}
+const LATEST_UPDATES_COUNT = 3;
 
 function NewsLink({ link }: { link: NonNullable<NewsItem["link"]> }) {
   const className = "text-xs font-medium text-puffin-sky hover:underline";
@@ -36,19 +29,16 @@ function NewsLink({ link }: { link: NonNullable<NewsItem["link"]> }) {
   );
 }
 
+
 function NewsCard({ item }: { item: NewsItem }) {
   return (
     <article className="rounded-xl border border-puffin-blue/10 bg-white p-6 shadow-sm">
       <time dateTime={item.date} className="text-sm font-bold text-puffin-orange">
         {formatDate(item.date)}
       </time>
-      <h3 className="mt-1 text-lg font-semibold text-puffin-navy">
-        {item.headline}
-      </h3>
+      <h3 className="mt-1 text-lg font-semibold text-puffin-navy">{item.headline}</h3>
       {item.details && (
-        <p className="mt-2 text-sm text-puffin-gray leading-relaxed">
-          {item.details}
-        </p>
+        <p className="mt-2 text-sm text-puffin-gray leading-relaxed">{item.details}</p>
       )}
       {item.link && (
         <div className="mt-3">
@@ -60,7 +50,10 @@ function NewsCard({ item }: { item: NewsItem }) {
 }
 
 export default function NewsPage() {
-  const sortedNews = [...news].sort((a, b) => b.date.localeCompare(a.date));
+  const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
+  const latestNews = [...news]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, LATEST_UPDATES_COUNT);
 
   return (
     <>
@@ -69,19 +62,23 @@ export default function NewsPage() {
         subtitle="Updates, publications, and milestones from the Puffin Lab."
       />
 
-      {/* All News */}
+     {/* Blog Posts */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading title="Latest Updates" />
-          {sortedNews.length > 0 ? (
-            <div className="space-y-4">
-              {sortedNews.map((item) => (
-                <NewsCard key={item.id} item={item} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-puffin-gray">No news yet. Check back soon!</p>
-          )}
+          <SectionHeading title="Posts" />
+          <PostsViewer posts={sortedPosts} />
+        </div>
+      </section>
+
+      {/* Latest Updates */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading title="Previous Updates" />
+          <div className="space-y-4">
+            {latestNews.map((item) => (
+              <NewsCard key={item.id} item={item} />
+            ))}
+          </div>
         </div>
       </section>
     </>
